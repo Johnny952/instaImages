@@ -74,7 +74,7 @@ The main method by default post every image on **images** folder in instagram, f
 bot = PythonOrgSearchChrome(email='Your Email', password='Your Password')
 ```
 Then, in setUp it opens the browser, then it log in.
-The variable **script_path** is the path of the directory where is the script and is used then in the **post_every_image** to upload the images on **images** folder, this folder must only contain images **jpg**, *jpeg**, **png** among others (image fotmats supported by instagram).
+The variable **script_path** is the path of the directory where is the script and is used then in the **post_every_image** to upload the images on **images** folder, this folder must only contain images **jpg**, **jpeg**, **png** among others (image fotmats supported by instagram).
 
 # Comments
 The module by default emulate the instagram of a BlackBerry Z30 that is what worked for me, but you can try others for more resolution commenting line 32 and uncommenting the line of the device of your preference.
