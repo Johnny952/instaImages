@@ -28,7 +28,48 @@ First, you need to download the driver for selenium to use the browser, the link
 * [Firefox](https://github.com/mozilla/geckodriver/releases)
 * [Safari](https://webkit.org/blog/6900/webdriver-support-in-safari-10/)
 
-Once you download the driver, you need to place it in the same folder of the script and change line 87 'chromedriver' for the driver's name.
+Once you download the driver, you need to place it in the same folder of the script and change line 87 'chromedriver' for the driver's name (E.g. 'gekodriver' for Firefox).
 ```
 self.browser = webdriver.Chrome(executable_path='chromedriver',
 ```
+## Language
+If you use english browser, change the following lines:
+In line 107 change "Ahora " for "Not now" and in line 108 "Cancelar" for "Cancel".
+```
+self.wait_limit(button="//*[contains(text(),'Ahora')]", limit=12, count=0)
+self.wait_limit(button="//*[contains(text(),'Cancelar')]", limit=12, count=0)
+```
+
+In lines 115 and 106 change "Abrir" for "Open".
+```
+autoit.win_active("Abrir")
+autoit.control_set_text("Abrir", "Edit1", path)
+```
+
+In line 136 change "Reintentar" for "Retry" and in line 141 "Ahora" for "Not now".
+```
+self.browser.find_element_by_xpath("//button[contains(text(),'Reintentar')]").click()
+```
+```
+self.browser.find_element_by_xpath("//button[contains(text(),'Ahora')]").click()
+```
+
+In lines 152 and 160 change "Compartir" for "Share".
+```
+self.browser.find_element_by_xpath("//button[text()='Compartir']").click()
+```
+
+The line 118 press the button to resize the image, if it is not clicked then go to the page, right click on the button and Inspect, it will show something like the following:
+```
+<span class="Szr5J createSpriteExpand">Ampliar</span>
+```
+Copy the class name, "Szr5J createSpriteExpand" in this case and replace the name of the button "pHnkA" in line 118.
+```
+self.wait_limit(button="//button[@class='pHnkA']", limit=12, count=0)
+```
+
+# How to use it
+
+
+# Comments
+The module by default emulate the instagram of a BlackBerry Z30 that is what worked for me, but you can try others for more resolution commenting line 32 and uncommenting the line of the device of your preference.
