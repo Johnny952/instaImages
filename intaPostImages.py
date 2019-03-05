@@ -115,7 +115,7 @@ class PythonOrgSearchChrome:
         autoit.win_active("Abrir")
         autoit.control_set_text("Abrir", "Edit1", path)
         autoit.control_send("Abrir", "Edit1", "{ENTER}")
-        self.wait_limit(button="//button[@class='pHnkA']", limit=12, count=0)
+        self.wait_limit(button="//button[text()='Ampliar']", limit=12, count=0)
         self.wait_limit(button="//button[text()='Siguiente']", limit=30, count=0)
         self.compartir()
         self.reintentar()
@@ -155,7 +155,7 @@ class PythonOrgSearchChrome:
             time.sleep(1)
             self.compartir()
     def compartir_clickeado(self):
-        # Try to click "Share" button until there is not that button
+        # Try to click "Share" button until it desappears
         try:
             self.browser.find_element_by_xpath("//button[text()='Compartir']").click()
             time.sleep(1)

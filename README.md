@@ -59,13 +59,9 @@ In lines 152 and 160 change "Compartir" for "Share".
 self.browser.find_element_by_xpath("//button[text()='Compartir']").click()
 ```
 
-The line 118 press the button to resize the image, if it is not clicked then go to the page, right click on the button and Inspect, it will show something like the following:
+The line 118 press the button to resize the image, change 'Ampliar' by 'Enlarge'.
 ```
-<span class="Szr5J createSpriteExpand">Ampliar</span>
-```
-Copy the class name, "Szr5J createSpriteExpand" in this case and replace the name of the button "pHnkA" in line 118.
-```
-self.wait_limit(button="//button[@class='pHnkA']", limit=12, count=0)
+self.wait_limit(button="//button[text()='Ampliar']", limit=12, count=0)
 ```
 
 # How to use it
